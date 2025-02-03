@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <audio id="miAudio" loop>
+    <source src="La Distancia - Dvicio (LETRA).mp3" type="audio/mp3">
+    Tu navegador no soporta la reproducción de audio.
+</audio>
+
+<button onclick="document.getElementById('miAudio').play()">🎶 Reproducir música</button>
+
+    
+    <div class="container">
+        <h1>💖 ¡Hola, mi amor! 💖</h1>
+        <p class="message">Yo sé, que tú y yo estamos muy lejos y estamos a muchos kilómetros, pero solo te voy a decir algo: Si dos personas quieren algo en esta vida se lo proponen y lo logran. Y si tu amor y el mío es real logramos distancias y lo que sea. Por eso me tomo el atrevimiento de preguntarte.</p>
+        <h2>¿Quieres ser mi San Valentín? 💘</h2>
+        <div class="buttons">
+            <button class="yes" onclick="respuestaSi()">¡Sí, claro! 😍</button>
+            <button class="no" onmouseover="moverBoton(this)">No 😢</button>
+        </div>
+        <div class="image-container">
+            <img src="IMG_20240609_150144.jpg" alt="Nosotros">
+        </div>
+    </div>
+    
+    <script>
+        function respuestaSi() {
+            alert("¡Sabía que dirías que sí! 💖 Te amo mucho 😘");
+        }
+        
+        function moverBoton(boton) {
+            let x = Math.random() * (window.innerWidth - boton.clientWidth);
+            let y = Math.random() * (window.innerHeight - boton.clientHeight);
+            boton.style.left = `${x}px`;
+            boton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
